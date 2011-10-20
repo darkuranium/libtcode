@@ -59,9 +59,13 @@ int main()
     tc_char16 u16[256];
     tc_char32 u32[256];
     
+    memset(u32, 0, sizeof(u32));
     tcode_utf8_to_utf32(u32, sizeof(u32) / sizeof(*u32), u8in, strlen(u8in), 1);
+    memset(u16, 0, sizeof(u16));
     tcode_utf32_to_utf16(u16, sizeof(u16) / sizeof(*u16), u32, strlen32(u32), 1);
+    memset(u32, 0, sizeof(u32));
     tcode_utf16_to_utf32(u32, sizeof(u32) / sizeof(*u32), u16, strlen16(u16), 1);
+    memset(u8, 0, sizeof(u8));
     tcode_utf32_to_utf8(u8, sizeof(u8) / sizeof(*u8), u32, strlen32(u32), 1);
     
     printf("%s\n%s\n\n", u8in, u8);

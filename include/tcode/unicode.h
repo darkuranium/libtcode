@@ -11,7 +11,6 @@ size_t tcode_char_utf16_normalize(tc_char16* out, const tc_char16* in, size_t* i
 size_t tcode_char_utf16_to_utf8(tc_char8* out, const tc_char16* in, size_t* inlen, int strict);
 size_t tcode_char_utf16_to_utf32(tc_char32* out, const tc_char16* in, size_t* inlen, int strict);
 
-size_t tcode_char_utf32_normalize(tc_char32* out, const tc_char32* in, size_t* inlen);
 size_t tcode_char_utf32_to_utf8(tc_char8* out, const tc_char32* in, size_t* inlen, int strict);
 size_t tcode_char_utf32_to_utf16(tc_char16* out, const tc_char32* in, size_t* inlen, int strict);
 
