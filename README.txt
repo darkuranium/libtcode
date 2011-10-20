@@ -6,6 +6,7 @@ It currently decoding and encoding [for]:
 - URLs
 - XML string with entities (note: &#xxxx; entities are not yet supported)
 - Base64
+- Unicode (UTF-8, UTF-16 and UTF-32)
 
 It is released under the 2-clause BSD license (see the file COPYING.txt
 for more info).
