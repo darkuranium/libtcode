@@ -1,9 +1,15 @@
 #ifndef __TCODE_INTERNAL_H__
 #define __TCODE_INTERNAL_H__
 
+#include <tcode/common.h>
+
 #include <stddef.h>
 
 #define MIN(x,y) (((x) < (y)) ? (x) : (y))
+
+size_t _tcode_append8(size_t pos, tc_char8* out, size_t outlen, const tc_char8* in, size_t inlen);
+size_t _tcode_append16(size_t pos, tc_char16* out, size_t outlen, const tc_char16* in, size_t inlen);
+size_t _tcode_append32(size_t pos, tc_char32* out, size_t outlen, const tc_char32* in, size_t inlen);
 
 size_t _tcode_append(size_t pos, char* out, size_t outlen, const char* in, size_t inlen);
 int _tcode_startswith(size_t pos, const char* in, size_t inlen, const char* what, size_t whatlen);
