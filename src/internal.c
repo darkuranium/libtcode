@@ -1,33 +1,29 @@
 #include <tcode/internal.h>
 
+#include <string.h>
+
 size_t _tcode_append8(size_t pos, tc_char8* out, size_t outlen, const tc_char8* in, size_t inlen)
 {
-    if(pos >= outlen)
+    if(pos + 1 >= outlen)
         return inlen;
 
-    size_t i;
-    for(i = 0; i < MIN(outlen - pos, inlen); i++)
-        out[pos + i] = in[i];
+    memcpy(out + pos, in, MIN(outlen - pos - 1, inlen) * sizeof(tc_char8));
     return inlen;
 }
 size_t _tcode_append16(size_t pos, tc_char16* out, size_t outlen, const tc_char16* in, size_t inlen)
 {
-    if(pos >= outlen)
+    if(pos + 1 >= outlen)
         return inlen;
 
-    size_t i;
-    for(i = 0; i < MIN(outlen - pos, inlen); i++)
-        out[pos + i] = in[i];
+    memcpy(out + pos, in, MIN(outlen - pos - 1, inlen) * sizeof(tc_char16));
     return inlen;
 }
 size_t _tcode_append32(size_t pos, tc_char32* out, size_t outlen, const tc_char32* in, size_t inlen)
 {
-    if(pos >= outlen)
+    if(pos + 1 >= outlen)
         return inlen;
 
-    size_t i;
-    for(i = 0; i < MIN(outlen - pos, inlen); i++)
-        out[pos + i] = in[i];
+    memcpy(out + pos, in, MIN(outlen - pos - 1, inlen) * sizeof(tc_char32));
     return inlen;
 }
 
